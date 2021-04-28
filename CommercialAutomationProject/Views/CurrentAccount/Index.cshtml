@@ -1,0 +1,42 @@
+﻿@using CommercialAutomationProject.Models.Entities
+@model List<CurrentAccount>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.CurrentId  </td>
+    <td>@item.CurrentName</td>  
+    <td>@item.CurrentSurname</td>
+    <td>@item.CurrentCity</td>
+    <td>@item.CurrentEmail</td>
+    <td>
+        <a href="/CurrentAccount/Delete/@item.CurrentId" class="btn btn-danger">Sil</a>
+    </td>
+    <td>
+        <a href="/CurrentAccount/Guncelle/@item.CurrentId" class="btn btn-success">Güncelle</a>
+    </td>
+    <td>
+        <a href="/CurrentAccount/CurrentAccountDetail/@item.CurrentId" class="btn btn-success" style="background-color:lightgreen">Detaylar</a>
+    </td>
+</tr>
+    }
+
+
+</table>
+<a href="/CurrentAccount/Add" class="btn btn-primary">Yeni Cari Ekle</a>
+

@@ -25,6 +25,7 @@ namespace CommercialAutomationProject.Models.Entities
         public string EmployeeImage { get; set; }
 
         public ICollection<SaleMovement> SaleMovements { get; set; }
-        public Department Department { get; set; }
+        public int DepartmentId { get; set; }
+        public virtual Department Department { get; set; }
     }
 }

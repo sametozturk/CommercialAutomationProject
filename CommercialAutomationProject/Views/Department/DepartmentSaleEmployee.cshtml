@@ -1,0 +1,37 @@
+﻿@using CommercialAutomationProject.Models.Entities
+@model List<SaleMovement>
+@{
+    ViewBag.Title = "DepartmentSaleEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Departman Personel Satış</h2>
+<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">@ViewBag.employee</li>
+</ol>
+<table class="table table-condensed">
+    <tr>
+        <th>Satış Id</th>
+        <th>Ürün</th>
+        <th>Cari</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+        <th>Yazdır  </th>
+    </tr>
+    <tr>
+        @foreach (var item in Model)
+        {
+            <td>@item.SaleId</td>
+            <td>@item.Employee.EmployeeName</td>
+            <td>@item.CurrentAccount.CurrentName  @item.CurrentAccount.CurrentSurname</td>
+            <td>@item.Price</td>
+            <td>@item.TotalAmount</td>
+            <td>@item.Date</td>
+            <td><a href="#" class="btn btn-default" style="background-color:dodgerblue">Yazdır</a></td>
+        }
+
+    </tr>
+</table>

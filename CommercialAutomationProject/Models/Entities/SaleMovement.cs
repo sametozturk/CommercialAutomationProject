@@ -15,8 +15,12 @@ namespace CommercialAutomationProject.Models.Entities
         public decimal Price { get; set; }
         public decimal TotalAmount { get; set; }
 
-        public Product Product { get; set; }
-        public CurrentAccount CurrentAccount { get; set; }
-        public Employee Employee { get; set; }
+        public int ProductId { get; set; }
+        public int CurrentAccountId { get; set; }
+        public int EmployeeId { get; set; }
+
+        public virtual Product Product { get; set; }
+        public virtual CurrentAccount CurrentAccount { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

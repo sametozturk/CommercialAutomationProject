@@ -1,0 +1,17 @@
+﻿@model CommercialAutomationProject.Models.Entities.Department
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Kategori Güncelle</h2>
+<br />
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model=>model.DepartmentId)
+    <div class="form-group col-md-offset-10">
+        @Html.LabelFor(x => x.DepartmentName)
+        @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+}

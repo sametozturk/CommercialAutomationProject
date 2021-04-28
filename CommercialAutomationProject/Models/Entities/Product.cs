@@ -27,7 +27,8 @@ namespace CommercialAutomationProject.Models.Entities
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public string ProductImage { get; set; }
-        public Category Category { get; set; }
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; }
         public ICollection<SaleMovement> SaleMovements { get; set; }
     }
 }

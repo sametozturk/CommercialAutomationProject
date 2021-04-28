@@ -1,0 +1,28 @@
+﻿@model CommercialAutomationProject.Models.Entities.CurrentAccount
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.CurrentName)
+        @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.CurrentSurname)
+        @Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.CurrentCity)
+        @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.CurrentEmail)
+        @Html.TextBoxFor(x => x.CurrentEmail, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+}
+
