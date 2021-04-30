@@ -54,5 +54,12 @@ namespace CommercialAutomationProject.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult CustomerSale(int id)
+        {
+            var deger = db.SaleMovements.Where(x => x.CurrentAccountId == id).ToList();
+            var cari = db.CurrentAccounts.Where(x => x.CurrentId == id).Select(y => y.CurrentName + " " + y.CurrentSurname).FirstOrDefault();
+            ViewBag.current = cari;
+            return View(deger);
+        }
     }
 }

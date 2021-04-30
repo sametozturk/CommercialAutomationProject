@@ -328,6 +328,7 @@
     <Content Include="Views\CurrentAccount\Index.cshtml" />
     <Content Include="Views\CurrentAccount\Add.cshtml" />
     <Content Include="Views\CurrentAccount\Update.cshtml" />
+    <Content Include="Views\CurrentAccount\CustomerSale.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
