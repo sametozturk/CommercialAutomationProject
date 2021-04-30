@@ -1,0 +1,36 @@
+﻿@model CommercialAutomationProject.Models.Entities.CurrentAccount
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Cari Güncelleme</h2>
+<br />
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.CurrentId)
+    <div class="form-group">
+        @Html.LabelFor(x => x.CurrentName)
+        @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CurrentName, "", new { @style="color:red"})
+        <br />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.CurrentSurname)
+        @Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CurrentSurname, "", new { @style = "color:red" })
+        <br />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.CurrentCity)
+        @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
+        <br />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.CurrentEmail)
+        @Html.TextBoxFor(x => x.CurrentEmail, new { @class = "form-control" })
+        <br />
+    </div>
+    <button class="btn btn-default" style="background-color:yellowgreen">Güncelle</button>
+}
+
