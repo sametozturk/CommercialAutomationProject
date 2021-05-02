@@ -1,0 +1,34 @@
+﻿@using CommercialAutomationProject.Models.Entities
+@model List<InvoiceDetail>
+@{
+    ViewBag.Title = "InvoiceDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<br />
+<h2>Departman Detay</h2>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"></li>
+</ol>
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Açıklama</th>
+        <th>Miktar</th>
+        <th>Birim Fiyat</th>
+        <th>Tutar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.InvoiceDetailId</td>
+            <td>@item.Explanation</td>
+            <td>@item.Quantity</td>
+            <td>@item.Amount</td>
+        </tr>
+    }
+</table>
+<a href="/Invoice/NewInvoiceDetail" class="btn btn-default" style="background-color:darksalmon">Yeni Kalem Girişi</a>
+  

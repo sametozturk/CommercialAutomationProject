@@ -24,7 +24,10 @@ namespace CommercialAutomationProject.Models.Entities
         [Column(TypeName = "Varchar")]
         [StringLength(60)]
         public string TaxAdministration { get; set; }
-        public DateTime Time { get; set; }
+
+        [Column(TypeName = "char")]
+        [StringLength(5)]
+        public string Time { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
@@ -33,6 +36,8 @@ namespace CommercialAutomationProject.Models.Entities
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string Deliverer { get; set; }
+
+        public decimal TotalAmount { get; set; }
         public ICollection<InvoiceDetail> InvoiceDetails { get; set; }
     }
 }

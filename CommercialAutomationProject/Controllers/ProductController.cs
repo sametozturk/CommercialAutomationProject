@@ -70,5 +70,10 @@ namespace CommercialAutomationProject.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult ProductList()
+        {
+            var product = db.Products.ToList();
+            return View(product);
+        }
     }
 }

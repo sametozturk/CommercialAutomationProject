@@ -1,0 +1,41 @@
+﻿@model CommercialAutomationProject.Models.Entities.Invoice
+@{
+    Layout = null;
+}
+<br />
+<h2>Fatura Güncelleme</h2>
+<br />
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.InvoiceId)
+    <div class="form-group">
+        @Html.LabelFor(x => x.invoiceSerial)
+        @Html.TextBoxFor(x => x.invoiceSerial, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.InvoiceNumber)
+        @Html.TextBoxFor(x => x.InvoiceNumber, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.TaxAdministration)
+        @Html.TextBoxFor(x => x.TaxAdministration, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Date)
+        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Time)
+        @Html.TextBoxFor(x => x.Time, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Deliverer)
+        @Html.TextBoxFor(x => x.Deliverer, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Recipient)
+        @Html.TextBoxFor(x => x.Recipient,new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-primary">Güncelle</button>
+}
