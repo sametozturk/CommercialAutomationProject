@@ -44,7 +44,7 @@ namespace CommercialAutomationProject.Controllers
         {
             if(!ModelState.IsValid)
             {
-                return View("Update")
+                return View("Update");
             }
             var guncelle = db.CurrentAccounts.Find(current.CurrentId);
             guncelle.CurrentName = current.CurrentName;

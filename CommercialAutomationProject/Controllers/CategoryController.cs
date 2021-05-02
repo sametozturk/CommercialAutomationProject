@@ -17,6 +17,9 @@ namespace CommercialAutomationProject.Controllers
         }
         public ActionResult Add()
         {
+            List<SelectListItem> departmanlar = (from x in db.Departments.ToList()
+                                              select new SelectListItem { Value = x.DepartmentId.ToString(), Text = x.DepartmentName }).ToList();
+            ViewBag.departments = departmanlar;
             return View();
         }
         [HttpPost]

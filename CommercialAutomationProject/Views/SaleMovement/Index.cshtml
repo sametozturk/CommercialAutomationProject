@@ -1,0 +1,47 @@
+﻿@using CommercialAutomationProject.Models.Entities
+@model List<SaleMovement>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>ID</th>
+        <th>Ürün</th>
+        <th>Cari</th>
+        <th>Personel</th>
+        <th>Adet</th>
+        <th>Fiyat</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+        <th>Güncelle</th> 
+        <th>Detaylar</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SaleId  </td>
+            <td>@item.Product.ProductName</td>
+            <td>@item.CurrentAccount.CurrentName @item.CurrentAccount.CurrentSurname</td>
+            <td>@item.Employee.EmployeeName @item.Employee.EmployeeSurname</td>
+            <td>@item.Number</td>
+            <td>@item.Price</td>
+            <td>@item.TotalAmount</td>
+            <td>@item.Date</td>
+            <td>
+                <a href="/SaleMovement/Update/@item.SaleId" class="btn btn-warning">Güncelle</a>
+            </td>
+            <td>
+                <a href="/SaleMovement/SaleDetail/@item.SaleId" class="btn btn-success">Detay</a>
+            </td>
+        </tr>
+    }
+
+
+</table>
+<a href="/SaleMovement/Add" class="btn btn-primary">Yeni Satış</a>
+
+
+

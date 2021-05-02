@@ -1,0 +1,38 @@
+﻿@model CommercialAutomationProject.Models.Entities.SaleMovement
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Satış Sayfası</h2>
+<br />
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.Product)
+        @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.product,new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Cari");
+        @Html.DropDownListFor(x => x.CurrentAccountId,(List<SelectListItem>)ViewBag.current, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Employee)
+        @Html.DropDownListFor(x => x.EmployeeId, (List<SelectListItem>)ViewBag.employee,new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Number)
+        @Html.TextBoxFor(x => x.Number, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Price)
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.TotalAmount)
+        @Html.TextBoxFor(x => x.TotalAmount, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-primary">Satış Yap</button>
+}
+
